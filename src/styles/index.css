@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+/* Ensure smooth scrolling and prevent horizontal layout shift */
+html {
+  scroll-behavior: smooth;
+  background-color: #08090c;
+  color: #f3f4f6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #08090c;
+  color: #f3f4f6;
+  overflow-x: hidden;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08090c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2230;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a3044;
+}
+
+/* Accessible focus ring */
+*:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 3px;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(56, 189, 248, 0.25);
+  color: #ffffff;
+}
+
+/* Hardware-accelerated, zero-overhead Hero reveal animations */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-eyebrow {
+  animation: heroFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.04s both;
+}
+
+.animate-hero-headline {
+  animation: heroFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.animate-hero-subheadline {
+  animation: heroFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.16s both;
+}
+
+.animate-hero-typewriter {
+  animation: heroFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+}
+
+.animate-hero-cta {
+  animation: heroFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-eyebrow,
+  .animate-hero-headline,
+  .animate-hero-subheadline,
+  .animate-hero-typewriter,
+  .animate-hero-cta {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
